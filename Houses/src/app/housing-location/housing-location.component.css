@@ -22,15 +22,16 @@
 
 .listing-location::before {
   content: url("/assets/location-pin.svg");
+  vertical-align: bottom;
 }
 
-section .listing a {
-  padding-left: 20px;
+section.listing a {
+  padding-left: 25px;
   text-decoration: none;
   color: var(--primary-color);
 }
 
-section .listing a::after {
+section.listing a::after {
   content: "\203A";
   margin-left: 5px;
 }
