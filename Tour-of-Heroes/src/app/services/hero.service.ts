@@ -65,7 +65,7 @@ export class HeroService {
     return this.http.get<Hero[]>(`${this.heroesUrl}/?name=${term}`).pipe(
       tap((x) =>
         x.length
-          ? this.log(`Heroi obtingut segons la paruala=${term}`)
+          ? this.log(`Heroi obtingut segons la paraula=${term}`)
           : this.log(`Cap heroi obtingut segons la paraula=${term}`)
       ),
       catchError(this.handleError<Hero[]>('Error obtenint herois', []))
