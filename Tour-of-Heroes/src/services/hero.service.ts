@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
-import { Hero } from './hero';
-import { HEROES } from './mock-heroes';
+import { Hero } from '../app/data/hero';
+import { HEROES } from '../app/data/mock-heroes';
 import { MessageService } from './message.service';
 
 @Injectable({
@@ -33,11 +33,13 @@ export class HeroService {
   }
   updateHero(hero: Hero): Observable<any> {
     return this.http.put(this.heroesUrl, hero, this.httpOptions).pipe(
-      tap(_ => this.log(`Heroi actualitzat amb id=${hero.id}`)),	
-      catchError(this.handleError<any>('Error actualitzant heroi amb id=${hero.id}'))
-    )
+      tap((_) => this.log(`Heroi actualitzat amb id=${hero.id}`)),
+      catchError(
+        this.handleError<any>('Error actualitzant heroi amb id=${hero.id}')
+      )
+    );
   }
-  
+
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
       console.error(error);
@@ -46,6 +48,6 @@ export class HeroService {
     };
   }
   private log(message: string) {
-    this.messageService.add("Servei 'HeroService' ha obtingut dades d'herois");
+    this.messageService.add(`Servei 'HeroService': ${message}`);
   }
 }

@@ -23,3 +23,9 @@
     </a>
   </li>
 </ul>
+
+<div>
+  <label for="mew-hero">Nom de l'heroi</label>
+  <input type="text" id="new-hero" #heroName />
+  <button (click)="addHero(heroName.value); heroName.value=''">
+</div>
