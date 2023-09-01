@@ -1,9 +1,13 @@
 <div *ngIf="hero">
   <h2>Detalls de {{ hero.name | uppercase }}</h2>
   <div><span>id:</span>{{ hero.id }}</div>
-  <div>
-		<label for="hero-name">Nom de l'heroi:</label>
-		<input type="text" id="hero-name" [(ngModel)]="hero.name">
-		<!-- <span>{{hero.name}}</span> -->
-	</div>
+  <div class="hero-form">
+    <label for="hero-name">Nom de l'heroi:</label>
+    <input type="text" id="hero-name" [(ngModel)]="hero.name" />
+    <!-- <span>{{hero.name}}</span> -->
+  </div>
+  <div class="bloc-botons">
+    <button type="button" (click)="goBack()">Tornar enrere</button>
+    <button type="button" (click)="save()">Guardar canvis</button>
+  </div>
 </div>
