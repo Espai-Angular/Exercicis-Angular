@@ -1,0 +1,11 @@
+<div class="container">
+  <h3 [id]="sayHelloId" [style.color]="fontColor">{{message}}</h3>
+  <button
+    type="button"
+    class="boto-saludar"
+    [disabled]="!canClick"
+    (click)="sayMessage()"
+  >
+    Botó de saludar
+  </button>
+</div>

@@ -1,1 +1,47 @@
 /* You can add global styles to this file, and also import other style files */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Be Vietnam Pro", sans-serif;
+  color: rgb(5, 42, 42);
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+p {
+  font-size: 1.5rem;
+}
+
+button {
+  padding: 1rem;
+  background-color: rgb(5, 42, 42);
+  color: azure;
+  border: 2px solid rgb(5, 42, 42);
+  border-radius: 1rem;
+  cursor: pointer;
+
+  &:hover {
+    color: rgb(165, 200, 185);
+    border-color: rgb(165, 200, 185);
+  }
+
+  &:active {
+    color: orange;
+    outline: 2px solid orange;
+  }
+}

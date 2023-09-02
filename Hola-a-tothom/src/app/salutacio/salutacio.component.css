@@ -1,0 +1,13 @@
+.container {
+  margin: 2rem 0 4rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+
+  h3 {
+    font-style: italic;
+  }
+}
+
+

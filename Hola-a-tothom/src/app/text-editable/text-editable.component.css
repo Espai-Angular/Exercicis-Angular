@@ -1,0 +1,33 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+hr {
+  margin-top: 0.25rem;
+  width: 80%;
+}
+
+.selecció-editable {
+  margin: 2rem 0;
+	width: 55%;
+	display: flex;
+	justify-content: start;
+	align-items: center;
+	gap: 1rem;
+
+	p {
+		font-weight: bold;
+	}
+}
+
+.missatge {
+	width: 55%;
+	padding: 1rem;
+	border: 2px solid rgb(5, 42, 42);
+	border-radius: 1rem;
+}
+
+

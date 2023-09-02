@@ -1,0 +1,20 @@
+<div class="container">
+  <h3>Text editable amb *ngIf</h3>
+  <hr />
+
+  <div class="selecció-editable">
+    <button type="button" (click)="onEditClick()">Fer editable!</button>
+    <div *ngIf="canEdit; else noEdit">
+      <p>Aquest text sí que es pot editar!</p>
+    </div>
+    <ng-template #noEdit>
+      <p>Aquest text no es pot editar...</p>
+    </ng-template>
+  </div>
+
+  <div class="missatge">
+		<p [contentEditable]="canEdit">{{ message }} </p>
+	</div>
+
+  <app-depedency-injection></app-depedency-injection>
+</div>
