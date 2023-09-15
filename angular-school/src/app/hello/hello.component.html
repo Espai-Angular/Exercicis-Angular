@@ -1,1 +1,6 @@
-<p>Hola gent!</p>
+<div class="bloc-input">
+	<input type="text" [(ngModel)]="nomInput">
+	<button (click)="afegirNom()">Afegir nom</button>
+</div>
+<p>Hola gent! Sóc el {{ nom }}</p>
+<button (click)="onNomClick()">Cliqueu per saludar!</button>

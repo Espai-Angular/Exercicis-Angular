@@ -1,0 +1,34 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+
+
+img {
+  margin-top: 2rem;
+  padding: 1rem;
+  border: 1px solid black;
+  border-radius: 0.5rem;
+}
+
+.amagat {
+	opacity: 0;
+}
+
+.vist {
+	
+  animation: amagat .5s ease-in-out;
+}
+
+@keyframes amagat {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

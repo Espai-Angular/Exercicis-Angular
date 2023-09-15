@@ -1,0 +1,12 @@
+.bloc-input {
+	display: flex;
+	gap: 1rem;
+}
+
+p {
+	font-size: 1.6em;
+}
+
+button {
+	width: 100%;
+}

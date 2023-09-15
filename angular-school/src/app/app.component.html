@@ -1,1 +1,12 @@
-<app-hello></app-hello>
+<div class="container">
+  <h1>Let's learn Angular</h1>
+  <div [class.amagat]="componentHello.nomInput.length === 0" [class.vist]="componentHello.nomInput.length !== 0">
+    Escrivint {{ componentHello.nomInput }} al component Hello
+  </div>
+  <app-hello
+    #componentHello
+    [nom]="meuNom"
+    (diguesHola)="onDiguesHola($event)"
+  ></app-hello>
+  <img [src]="mevaImatge" alt="La meva imatge" />
+</div>
