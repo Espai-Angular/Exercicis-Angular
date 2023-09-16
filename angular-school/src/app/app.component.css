@@ -6,8 +6,6 @@
   gap: 1rem;
 }
 
-
-
 img {
   margin-top: 2rem;
   padding: 1rem;
@@ -16,12 +14,27 @@ img {
 }
 
 .amagat {
-	opacity: 0;
+  opacity: 0;
 }
 
 .vist {
-	
-  animation: amagat .5s ease-in-out;
+  animation: amagat 0.5s ease-in-out;
+}
+
+.error {
+	color:#dc3545;
+}
+
+.warning {
+	color: #ffc107;
+}
+
+.success {
+	color: #28a745;
+}
+
+.bold {
+	font-weight: 600;
 }
 
 @keyframes amagat {
