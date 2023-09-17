@@ -1,13 +1,36 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .bloc-input {
-	display: flex;
-	gap: 1rem;
+  display: flex;
+  flex-flow: wrap;
+  justify-content: center;
+  gap: 1rem;
+
+  input {
+    height: 25px;
+    flex: 1 1 auto;
+  }
+  button {
+    flex: 0 0 150px;
+    color: red;
+  }
+}
+.bloc-input2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 p {
-	font-size: .9em;
+	text-align: center;
+  font-size: 0.9em;
 }
 
 button {
-	width: 100%;
-	padding: .25rem 1rem;	
+  padding: 0.25rem 1rem;
 }

@@ -4,11 +4,13 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HelloComponent } from './hello/hello.component';
+import { PrimeraMajPipe } from './hello/primeraMaj.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HelloComponent
+    HelloComponent,
+    PrimeraMajPipe
   ],
   imports: [
     BrowserModule,

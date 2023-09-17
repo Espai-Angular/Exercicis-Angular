@@ -22,19 +22,19 @@ img {
 }
 
 .error {
-	color:#dc3545;
+  color: #dc3545;
 }
 
 .warning {
-	color: #ffc107;
+  color: #ffc107;
 }
 
 .success {
-	color: #28a745;
+  color: #28a745;
 }
 
 .bold {
-	font-weight: 600;
+  font-weight: 600;
 }
 
 @keyframes amagat {
@@ -44,4 +44,8 @@ img {
   100% {
     opacity: 1;
   }
+}
+
+app-hello {
+  width: 60%;
 }

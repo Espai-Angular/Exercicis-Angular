@@ -1,9 +1,9 @@
 <div class="container">
-  <h1 [style.color]="componentHello.llistaNoms.length > 0 ? 'red' : 'black'">
+  <h1 [ngStyle]="estilsTitol">
     Let's learn Angular
   </h1>
   <h3 [style.font-size.rem]="componentHello.llistaNoms.length > 0 ? 1.5 : 1">
-    Número de noms a la llista: {{ componentHello.llistaNoms.length }}
+    Número de noms a la llista: {{ componentHello.llistaNoms.length}}
   </h3>
   <div
     [class.amagat]="componentHello.nomInput.length === 0"

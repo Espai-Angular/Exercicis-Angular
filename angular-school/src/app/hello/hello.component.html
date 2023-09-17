@@ -13,23 +13,25 @@
   </div>
 </div> -->
 
-<div [ngSwitch]="llistaNoms.length">
-  <div *ngSwitchCase="4">
-    <p>Només queda espai per 1 nom més...</p>
-    <div class="bloc-input">
+<div class="container">
+  <div [ngSwitch]="llistaNoms.length">
+    <div *ngSwitchCase="4">
+      <p>Només queda espai per 1 nom més...</p>
+      <div class="bloc-input">
+        <input type="text" [(ngModel)]="nomInput" />
+        <button (click)="afegirNom()">Afegir nom</button>
+      </div>
+    </div>
+    <div *ngSwitchCase="5">
+      <p>NO es poden afegir més noms</p>
+    </div>
+    <div class="bloc-input" *ngSwitchDefault>
       <input type="text" [(ngModel)]="nomInput" />
       <button (click)="afegirNom()">Afegir nom</button>
     </div>
   </div>
-  <div *ngSwitchCase="5">
-    <p>NO es poden afegir més noms</p>
+  <div class="bloc-input2" *ngFor="let nom of llistaNoms; index as ordre">
+    <p>Hola gent! Sóc el {{ nom | primeraMaj }}, codi {{ nom | slice:0:2 |uppercase}}, i el número {{ ordre + 1 }} de la llista</p>
+    <button (click)="onNomClick()">Cliqueu per saludar!</button>
   </div>
-  <div class="bloc-input" *ngSwitchDefault>
-    <input type="text" [(ngModel)]="nomInput" />
-    <button (click)="afegirNom()">Afegir nom</button>
-  </div>
-</div>
-<div *ngFor="let nom of llistaNoms; index as ordre">
-  <p>Hola gent! Sóc el {{ nom }}, el número {{ ordre + 1 }} de la llista</p>
-  <button (click)="onNomClick()">Cliqueu per saludar!</button>
 </div>
