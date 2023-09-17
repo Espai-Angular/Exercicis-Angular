@@ -12,11 +12,12 @@
 
   input {
     height: 25px;
+    max-width: 450px;
     flex: 1 1 auto;
   }
+
   button {
-    flex: 0 0 150px;
-    color: red;
+    flex: 0 1 150px;
   }
 }
 .bloc-input2 {
@@ -27,7 +28,7 @@
 }
 
 p {
-	text-align: center;
+  text-align: center;
   font-size: 0.9em;
 }
 

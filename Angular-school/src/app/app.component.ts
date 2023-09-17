@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SalutacioService } from './services/salutacio.service';
 
 @Component({
   selector: 'app-root',
@@ -10,11 +11,12 @@ export class AppComponent {
   meuNom: string | undefined = 'Pere';
   mevaImatge: string | undefined = '../assets/logo-angular.png';
   estilsTitol: { [key: string]: string } = {};
-  comptador: number = 0;
-  onDiguesHola($event: string) {
-    console.log($event);
-    this.comptador++;
-    console.log("Comptador: " + this.comptador);    
+
+  constructor(private salutacio: SalutacioService) {}
+
+  onDiguesHola(missatge: string) {
+    this.salutacio.handleSalutacio(missatge);
+    console.log('Comptador: ' + this.salutacio.comptador);
     this.defineixEstils();
   }
   defineixClasse(nom: string) {
@@ -28,7 +30,7 @@ export class AppComponent {
   defineixEstils() {
     this.estilsTitol = {
       'margin-top': '2rem',
-      "color": this.comptador % 2 === 0 ? 'olive' : 'darkorange',
+      color: this.salutacio.comptador % 2 === 0 ? 'olive' : 'darkorange',
     };
   }
 }
