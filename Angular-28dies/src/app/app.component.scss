@@ -1,0 +1,26 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+img {
+  border: 4px solid olivedrab;
+  border-radius: 50%;
+}
+
+.bloc-nom {
+	overflow: scroll;
+  border: 3px solid olivedrab;
+  border-radius: 15px;
+  width: 15rem;
+  padding: 1rem .5rem;
+}
+
+.input-text {
+	border: 3px solid olivedrab;
+  border-radius: 10px;
+	padding: .25rem .5rem;
+}
