@@ -6,16 +6,44 @@
   <div class="bloc-nom">
     <p *ngIf="nom">El nom és: {{ nom }}</p>
   </div>
-  <input class="input-text" type="text" [(ngModel)]="nom" />
+  <label for="input-text"
+    >Nom:
+    <input id="input-text" class="input-text" type="text" [(ngModel)]="nom"
+  /></label>
 
   <app-boto></app-boto>
 
   <ul>
-    <li *ngFor="let ciutat of ciutats">{{ ciutat }}</li>
+    <li
+      *ngFor="let ciutat of ciutats"
+      (click)="onCiutatClicada(ciutat)"
+      [ngClass]="{
+        seleccionat: ciutat === ciutatSeleccionada,
+        blanc: ciutat !== ciutatSeleccionada
+      }"
+      [ngStyle]="{ 'font-weight': ciutat === 'Cusco' ? '200' : '600' }"
+    >
+      {{ ciutat }}
+    </li>
   </ul>
   <ul>
     <li>Barcelona</li>
     <li>València</li>
     <li>Oporto</li>
   </ul>
+
+  <div *ngIf="ciutatSeleccionada">
+    <p >
+      La teva ciutat és: {{ ciutatSeleccionada }}
+    </p>
+    <button (click)="onEsborrarSeleccio()">Esborrar selecció</button>
+  </div>
+
+  <h2>KHADIM</h2>
+  <p class="frase-khadim">El meu nom és Khadim i ja tinc 10 anys</p>
+  <img
+    class="img-khadim"
+    src="../assets/_91408619_55df76d5-2245-41c1-8031-07a4da3f313f.jpg"
+    alt=""
+  />
 </div>
