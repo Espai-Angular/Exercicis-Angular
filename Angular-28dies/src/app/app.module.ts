@@ -7,6 +7,8 @@ import { FormsModule } from '@angular/forms';
 import { AppBootstrapComponent } from './app-bootstrap/app-bootstrap.component';
 import { BotoBootstrapComponent } from './boto-bootstrap/boto-bootstrap.component';
 import { AppVanillaComponent } from './app-vanilla/app-vanilla.component';
+import { FormNovaCiutatComponent } from './form-nova-ciutat/form-nova-ciutat.component';
+import { CiutatComponent } from './ciutat/ciutat.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +17,8 @@ import { AppVanillaComponent } from './app-vanilla/app-vanilla.component';
     AppBootstrapComponent,
     BotoBootstrapComponent,
     AppVanillaComponent,
+    FormNovaCiutatComponent,
+    CiutatComponent,
   ],
   imports: [BrowserModule, FormsModule],
   providers: [],

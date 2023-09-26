@@ -1,0 +1,20 @@
+<form action="">
+  <div class="row align-items-center">
+    <div class="col-auto">
+      <label for="novaCiutat" class="col-form-label">Escriu {{text}}</label>
+    </div>
+    <div class="col-auto">
+      <input type="text" id="novaCiutat" class="form-control" #inputNovaCiutat />
+    </div>
+    <div class="col-auto">
+      <button
+        type="button"
+        class="btn"
+				[ngClass]="[novaClasse]"
+        (click)="onEmetreCiutat(inputNovaCiutat.value)"
+      >
+        Afegir {{text}}
+      </button>
+    </div>
+  </div>
+</form>

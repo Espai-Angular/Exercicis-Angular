@@ -1,0 +1,10 @@
+<ul>
+  <li
+    (click)="onCiutatClicada(ciutat)"
+    [ngClass]="{
+      'alert alert-info': ciutat === ciutatSeleccionada
+    }"
+  >
+    {{ ciutat }}
+  </li>
+</ul>

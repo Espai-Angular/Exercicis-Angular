@@ -1,15 +1,22 @@
 <div class="container">
   <div class="row">
+    <div class="col-md-12 my-3">
+      <app-form-nova-ciutat
+        [text]="'Nova ciutat'"
+        [novaClasse]="'btn-info'"
+        (eventAfegirCiutat)="onAfegirCiutat($event)"
+      ></app-form-nova-ciutat>
+    </div>
+    <hr />
     <div class="col-md-8">
-      <li
-        *ngFor="let ciutat of ciutats"
-        (click)="onCiutatSeleccionada(ciutat)"
-        [ngClass]="{
-          seleccionat: ciutat === ciutatSeleccionada
-        }"
-      >
-        {{ ciutat }}
-      </li>
+      <ul>
+        <app-ciutat
+          *ngFor="let ciutat of ciutats"
+          [ciutat]="ciutat"
+          [ciutatSeleccionada]="ciutatSeleccionada"
+          (eventCiutatSeleccionada)="onCiutatSeleccionada($event)"
+        ></app-ciutat>
+      </ul>
     </div>
     <div class="col-md-4">
       <div *ngIf="ciutatSeleccionada">
@@ -22,4 +29,5 @@
       </div>
     </div>
   </div>
+  <label for="cercador">Cerca: <input type="text" id="cercador" #inputCerca (keypress)="onCerca()"></label>
 </div>

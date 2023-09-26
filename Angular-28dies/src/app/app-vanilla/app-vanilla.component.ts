@@ -6,7 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app-vanilla.component.scss'],
 })
 export class AppVanillaComponent {
-  title = 'Angular, 28 dies';
   url: string = '../assets/th.jpeg';
   nom!: string;
   ciutats: string[] = ['Lima', 'Montevideo', 'Cusco'];
