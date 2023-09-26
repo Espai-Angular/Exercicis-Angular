@@ -1,0 +1,60 @@
+<div class="container">
+  <p>Seguint: {{ title }}</p>
+  <p>Total de 5 + 5: {{ 5 + 5 }}</p>
+  <img src="{{ url }}" alt="" />
+
+  <div class="bloc-nom">
+    <p *ngIf="nom">El nom és: {{ nom }}</p>
+  </div>
+
+  <label for="input-text"
+    >Nom:
+    <input id="input-text" class="input-text" type="text" [(ngModel)]="nom"
+  /></label>
+
+  <ul>
+    <li
+      *ngFor="let ciutat of ciutats"
+      (click)="onCiutatClicada(ciutat)"
+      [ngClass]="{
+        seleccionat: ciutat === ciutatSeleccionada,
+        blanc: ciutat !== ciutatSeleccionada
+      }"
+      [ngStyle]="{ 'font-weight': ciutat === 'Cusco' ? '200' : '600' }"
+    >
+      {{ ciutat }}
+    </li>
+  </ul>
+  <ul>
+    <li>Barcelona</li>
+    <li>València</li>
+    <li>Oporto</li>
+  </ul>
+
+  <div class="bloc-resposta" *ngIf="ciutatSeleccionada">
+    <span *ngIf="textSalutacio">{{ textSalutacio }} </span>
+    <p>La teva ciutat és: {{ ciutatSeleccionada }}</p>
+
+    <app-boto
+      (click)="onEsborrarSeleccio()"
+      [color]="'darkOrange'"
+      [text]="'Esborrar selecció'"
+      [seleccio]="ciutatSeleccionada"
+    ></app-boto>
+    <app-boto (click)="onDirBonDia()" [color]="'darkblue'" [text]="'Bon dia'">
+    </app-boto>
+    <app-boto
+      (click)="onDirBonaTarda()"
+      [color]="'darkRed'"
+      [text]="'Bona tarda'"
+    ></app-boto>
+  </div>
+
+  <h2>KHADIM</h2>
+  <p class="frase-khadim">El meu nom és Khadim i ja tinc 10 anys</p>
+  <img
+    class="img-khadim"
+    src="../assets/_91408619_55df76d5-2245-41c1-8031-07a4da3f313f.jpg"
+    alt=""
+  />
+</div>

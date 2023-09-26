@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <li
+        *ngFor="let ciutat of ciutats"
+        (click)="onCiutatSeleccionada(ciutat)"
+        [ngClass]="{
+          seleccionat: ciutat === ciutatSeleccionada
+        }"
+      >
+        {{ ciutat }}
+      </li>
+    </div>
+    <div class="col-md-4">
+      <div *ngIf="ciutatSeleccionada">
+        <p>La ciutat seleccionada és: {{ ciutatSeleccionada }}</p>
+        <app-boto-bootstrap
+          (click)="(onEsborrarSeleccio)"
+          [text]="'Esborra la selecció'"
+          [color]="'cyan'"
+        ></app-boto-bootstrap>
+      </div>
+    </div>
+  </div>
+</div>
