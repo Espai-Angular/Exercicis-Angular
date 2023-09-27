@@ -9,6 +9,8 @@ import { BotoBootstrapComponent } from './boto-bootstrap/boto-bootstrap.componen
 import { AppVanillaComponent } from './app-vanilla/app-vanilla.component';
 import { FormNovaCiutatComponent } from './form-nova-ciutat/form-nova-ciutat.component';
 import { CiutatComponent } from './ciutat/ciutat.component';
+import {FiltrePerNomPipe } from './pipes/pipe-filtrePerNom';
+import { ContacteComponent } from './contacte/contacte.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,8 @@ import { CiutatComponent } from './ciutat/ciutat.component';
     AppVanillaComponent,
     FormNovaCiutatComponent,
     CiutatComponent,
+    FiltrePerNomPipe,
+    ContacteComponent,
   ],
   imports: [BrowserModule, FormsModule],
   providers: [],

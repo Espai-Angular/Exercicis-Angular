@@ -1,17 +1,25 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-12 my-3">
+    <div class="col-md-8 my-3">
       <app-form-nova-ciutat
         [text]="'Nova ciutat'"
         [novaClasse]="'btn-info'"
         (eventAfegirCiutat)="onAfegirCiutat($event)"
       ></app-form-nova-ciutat>
     </div>
+    <div class="col-md-4 my-3">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Filtrar..."
+        [(ngModel)]="cerca"
+      />
+    </div>
     <hr />
     <div class="col-md-8">
       <ul>
         <app-ciutat
-          *ngFor="let ciutat of ciutats"
+          *ngFor="let ciutat of ciutats | filtrePerNom : cerca"
           [ciutat]="ciutat"
           [ciutatSeleccionada]="ciutatSeleccionada"
           (eventCiutatSeleccionada)="onCiutatSeleccionada($event)"
@@ -29,5 +37,21 @@
       </div>
     </div>
   </div>
-  <label for="cercador">Cerca: <input type="text" id="cercador" #inputCerca (keypress)="onCerca()"></label>
+  <!-- <label for="cercador"
+    >Cerca: <input type="text" id="cercador" #inputCerca (keypress)="onCerca()"
+  /></label>
+  <p>El meu nom és: {{ "jordi" | uppercase }}</p>
+  <p>El meu aniversari és: {{ "5/14/76" | date | uppercase }}</p>
+  <p>I avui és: {{ dataAra | date : "fullDate" : "Europe:Andorra" }}</p>
+  <p>Em deuen {{ "850" | currency : "EUR" }}</p>
+  <p>Em deuen {{ "945" | currency : "USD" }}</p> -->
+</div>
+<hr>
+<div class="container">
+  <div class="row">
+    <div class="col-9">
+      <app-contacte></app-contacte>
+    </div>
+    <div class="col-3">Dades</div>
+  </div>
 </div>

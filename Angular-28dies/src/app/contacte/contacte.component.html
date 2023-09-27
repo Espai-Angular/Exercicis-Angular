@@ -1,0 +1,78 @@
+<h4 class="mb-4">Formulari de contacte</h4>
+<form (ngSubmit)="onSubmit(formulariContacte)" #formulariContacte="ngForm">
+  <div class="mb-4">
+    <label for="inputNom" class="form-label">Nom</label>
+    <input
+      type="text"
+      class="form-control ms-2"
+      id="inputNom"
+      name="nom"
+      [(ngModel)]="model.nom"
+      #nom="ngModel"
+      required
+    />
+    <div class="alert alert-danger" [hidden]="nom.valid || nom.pristine">
+      Camp requerit
+    </div>
+  </div>
+  <div class="mb-4 form-check">
+    <label for="checkEdat" class="form-label">Ets major d'edat?</label>
+    <input
+      type="checkbox"
+      class="form-check-input"
+      id="checkEdat"
+      name="edat"
+      [(ngModel)]="model.edat"
+      #edat="ngModel"
+      required
+    />
+    <div class="alert alert-danger" [hidden]="edat.valid || edat.pristine">
+      Camp requerit
+    </div>
+  </div>
+  <div class="mb-4">
+    <label for="departament" class="form-label">Departament</label>
+    <select
+      class="form-select form-select-sm"
+      id="departament"
+      name="departament"
+      [(ngModel)]="model.departament"
+      #departament="ngModel"
+      required
+    >
+      <option selected value="">Tria l'opció</option>
+      <option value="Màrqueting">Màrqueting</option>
+      <option value="Vendes">Vendes</option>
+      <option value="Altres">Altres</option>
+    </select>
+    <div
+      class="alert alert-danger"
+      [hidden]="departament.valid || departament.pristine"
+    >
+      Camp requerit
+    </div>
+  </div>
+  <div class="mb-4">
+    <label for="comentaris" class="form-label">Comentaris</label>
+    <textarea
+      class="form-control"
+      id="comentaris"
+      name="comentaris"
+      rows="4"
+      placeholder="Afegir comentaris..."
+      [(ngModel)]="model.comentaris"
+      #comentaris="ngModel"
+      required
+    ></textarea>
+    <div
+      class="alert alert-danger"
+      [hidden]="comentaris.valid || comentaris.pristine"
+    >
+      Camp requerit
+    </div>
+  </div>
+  <div class="text-end">
+    <button type="submit" class="btn btn-info col-4" [disabled]="formulariContacte.invalid">Enviar</button>
+  </div>
+</form>
+<pre>{{ formulariContacte.value | json }}</pre>
